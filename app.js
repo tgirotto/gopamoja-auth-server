@@ -17,16 +17,14 @@ var app = express();
 app.use(cors({origin:['http://localhost:4200', 'https://console.gopamoja.com'], credentials: true}));
 app.use(session({
   store: new pgSession({
-    pool : pg.pool,
+    pool : pg,
     tableName : 'sessions'
   }),
-  secret: "pepitosbazzeguti",
+  secret: "hellogopamoja!",
   resave: false,
   cookie: { maxAge: 30 * 24 * 60 * 60 * 1000},
   saveUninitialized: false
 }));
-
-var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

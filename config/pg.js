@@ -5,6 +5,9 @@ const client = new Pool(env.pg)
 
 client
   .connect()
+  .then(client => {
+    console.log(`Connected to ${env.pg.database} DB!`);
+  })
   .catch(error => {
     console.log(error);
   })
