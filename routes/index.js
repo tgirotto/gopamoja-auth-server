@@ -26,8 +26,14 @@ router.post('/login', async function(req, res, next) {
       res.status(401).json({user: {}});
     } else {
       req.session.user_id = result.rows[0].id;
-      console.log('valid');
-      res.json({user: result.rows[0]});
+
+      let user = result.rows[0];
+
+      res.json({user:
+        {
+          id: user.id
+        }
+      });
     }
   } catch(err) {
     res.status(500).json({err: err.toString()});
