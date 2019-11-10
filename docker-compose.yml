@@ -1,0 +1,14 @@
+version: '2.1'
+
+services:
+  maldini:
+    container_name: maldini
+    build: .
+    environment:
+      - ENVIRONMENT=${ENVIRONMENT}
+    networks:
+      - gopamoja
+
+networks:
+  gopamoja:
+    external: true
