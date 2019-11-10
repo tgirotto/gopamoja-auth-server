@@ -22,7 +22,7 @@ app.use(session({
   }),
   secret: "gopamoja!",
   resave: false,
-  cookie: { maxAge: 30 * 24 * 60 * 60 * 1000, secure: false},
+  cookie: { maxAge: 30 * 24 * 60 * 60 * 1000},
   saveUninitialized: false
 }));
 
