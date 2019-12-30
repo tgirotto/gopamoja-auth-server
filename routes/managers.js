@@ -17,7 +17,7 @@ router.post('/login', async function(req, res, next) {
     return;
   }
 
-  const q0 = "SELECT * FROM users WHERE email = $1 AND password = $2";
+  const q0 = "SELECT * FROM managers WHERE email = $1 AND password = $2";
 
   try {
     const result = await pg.query(q0, [email, password])
@@ -31,7 +31,10 @@ router.post('/login', async function(req, res, next) {
 
       res.json({user:
         {
-          id: user.id
+          first_name: user['first_name'],
+          last_name: user['last_name'],
+          access_level: user['access_level'],
+          id: user['id']
         }
       });
     }

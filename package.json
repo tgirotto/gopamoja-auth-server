@@ -17,5 +17,14 @@
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "pg": "^7.12.1"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+      "ignore": [
+      "node_modules/**/node_modules"
+      ],
+    "env": {
+      "ENVIRONMENT": "development"
+    }
   }
 }
